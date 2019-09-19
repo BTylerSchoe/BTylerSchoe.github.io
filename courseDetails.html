@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Course Details</title>
+        <link rel="stylesheet" type="text/css" href="./style.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <div class="navbar">
+            <div class='header'>
+                <h1>Mobile Development 4201</h1>
+                <p>This website was created for part of Mobile Development 4201 - lab 2. <br />
+                this website was developed using html, css, and jquery.</p>
+            </div>
+            <div id='navbar-links'>
+                <a href="./index.html" class="nav-link">Home</a>
+                <a href="./courseDetails.html" class="nav-link">Mobile Development</a>
+            </div>
+        </div>
+        <div id='mode'>
+            <h1>Course Work</h1>
+            <div class='classwork'>
+                <h2>Classwork</h2>
+                <h3>Coming soon!</p>
+            </div>
+            <hr />
+            <div class='labs'>
+                <h2>Lab Reports</h2>
+                <p>Click to change lab reports</p>
+                <button>Next Lab</button>
+                <div id='lab-1-div'>
+                    <h3>Lab 1</h3>
+                    <object class='lab-object' data="./Lab1Mode4201.pdf"></object>
+                </div>
+
+                <div id='lab-2-div'>
+                    <h3>Lab 2</h3>
+                    <object class='lab-object' data="./Lab1Mode4201.pdf"></object>
+                </div>
+            </div>
+            <hr />
+            <div class='projects'>
+                <h2>Projects</h2>
+                <h3>Coming soon!</>
+            </div>
+
+
+            <script>
+                $(document).ready(function(){
+                    $("#lab-1-div").show();
+                    $("#lab-2-div").hide();
+                    $("button").click(function(){
+                            $('#lab-1-div').toggle()
+                            $('#lab-2-div').toggle()
+                    });
+                });
+            </script>
+
+        </div>
+    </body>
+</html>
