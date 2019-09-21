@@ -37,6 +37,11 @@
                     <h3>Lab 2</h3>
                     <object class='lab-object' data="./Lab2Mode4201.pdf"></object>
                 </div>
+
+                <div id='lab-3-div'>
+                    <h3>Lab 3</h3>
+                    <object class='lab-object' data="./Lab3Mode4201.pdf"></object>
+                </div>
             </div>
             <hr />
             <div class='projects'>
@@ -48,10 +53,32 @@
             <script>
                 $(document).ready(function(){
                     $("#lab-1-div").show();
+                    $("#lab-1-div").attr('class', 'showing')
                     $("#lab-2-div").hide();
-                    $("button").click(function(){
+                    $("#lab-2-div").attr('class', 'hidden')
+                    $("#lab-3-div").hide();
+                    $("#lab-3-div").attr('class', 'hidden')
+                    $("button").click(function(e){
+                        console.log($("#lab-2-div").attr('class'))
+                        if ($("#lab-1-div").attr('class') == "showing") {
                             $('#lab-1-div').toggle()
+                            $("#lab-1-div").attr('class', 'hidden')
                             $('#lab-2-div').toggle()
+                            $("#lab-2-div").attr('class', 'showing')
+                        } else if ($("#lab-2-div").attr('class') === "showing") {
+                            $('#lab-2-div').toggle()
+                            $("#lab-2-div").attr('class', 'hidden')
+                            $('#lab-3-div').toggle()
+                            $("#lab-3-div").attr('class', 'showing')
+                        } else if ($("#lab-3-div").attr('class') === "showing") {
+                            $('#lab-3-div').toggle()
+                            $("#lab-3-div").attr('class', 'hidden')
+                            $('#lab-1-div').toggle()
+                            $("#lab-1-div").attr('class', 'showing')                            
+                        }
+                        // console.log(e.target)
+                        //     $('#lab-1-div').toggle()
+                        //     $('#lab-2-div').toggle()
                     });
                 });
             </script>
